@@ -2,6 +2,7 @@ module SpreeBraintreeVzero
   class Engine < Rails::Engine
     require 'spree/core'
     require 'spree/frontend'
+    require 'braintree'
     isolate_namespace Spree
     engine_name 'spree_braintree_vzero'
 
