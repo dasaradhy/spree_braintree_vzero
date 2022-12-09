@@ -8,9 +8,9 @@ module Spree
 
         def create
           gateway = if params[:payment_method_id]
-            Spree::Gateway::BraintreeVzeroBase.find(params[:payment_method_id])
+            ::Spree::PaymentMethod.where(type:['Spree::Gateway::BraintreeVzeroBase', 'Spree::Gateway::BraintreeVzeroDropInUi']).find(params[:payment_method_id])
           else
-            Spree::Gateway::BraintreeVzeroBase.active.first
+            ::Spree::PaymentMethod.where(type:['Spree::Gateway::BraintreeVzeroBase', 'Spree::Gateway::BraintreeVzeroDropInUi']).active.first
           end
 
           render json: {
