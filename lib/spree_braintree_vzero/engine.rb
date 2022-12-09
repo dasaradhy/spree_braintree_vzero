@@ -26,5 +26,6 @@ module SpreeBraintreeVzero
         ::Spree::Gateway::BraintreeVzeroPaypalExpress,
         ::Spree::Gateway::BraintreeVzeroHostedFields
       ])
+    end
   end
 end
